@@ -1,0 +1,4 @@
+IP Address,Attempts,Severity
+192.168.1.10,4,MEDIUM
+10.0.0.5,2,MEDIUM
+172.16.0.9,5,HIGH
