@@ -1,113 +1,152 @@
-SOC Log Analyzer Pro – Real-Time Threat Detection and Linux SSH Security Monitoring
+SOC Log Analyzer Pro
 
 Overview
 
-SOC Log Analyzer Pro is a Python-based Security Operations Center (SOC) project developed for security monitoring and threat detection.
+SOC Log Analyzer Pro is a Python-based Security Operations Center (SOC) project designed to analyze security logs, detect suspicious login activities, classify threat levels, store attack records in a SQLite database, generate reports, and visualize attack statistics.
 
-The tool analyzes authentication logs, detects brute-force attacks, monitors suspicious login activities, identifies high-risk IP addresses, generates PDF reports, provides real-time monitoring, and supports Linux SSH log analysis.
+This project simulates real-world SOC analyst workflows including log analysis, threat detection, incident reporting, database management, and attack visualization.
 
 ⸻
 
 Features
 
-Log Analysis
-
-* Failed Login Detection
-* Brute Force Attack Detection
-* High Risk IP Identification
-* Medium Risk IP Identification
-* Low Risk IP Identification
-
-Dashboard
-
-* Total Failed Logins Counter
-* High Risk Summary
-* Medium Risk Summary
-* Low Risk Summary
-* Top Attacker Identification
-* Top 3 Attackers Ranking
-
-Search Engine
-
-* Search Any IP Address
-* Display Attack Attempts
-* Risk Classification
-
-Monitoring
-
 * Real-Time Log Monitoring
-* Live Attack Detection
-* Monitoring Status Indicator
-
-Reporting
-
+* Failed Login Detection
+* Risk Classification (High, Medium, Low)
+* SQLite Database Integration
+* IP Search Functionality
+* CSV Report Generation
 * PDF Report Generation
-* SOC Dashboard Summary
-* Incident Reporting
-
-Visualization
-
+* Email Alert Notification
 * Risk Distribution Pie Chart
 * Top Attackers Bar Chart
-
-Linux Security Monitoring
-
-* Linux SSH Authentication Log Analysis
-* SSH Brute Force Detection
-* Suspicious Login Monitoring
+* GUI Interface using Tkinter
 
 ⸻
 
 Technologies Used
 
-* Python
+* Python 3
 * Tkinter
+* SQLite3
 * Matplotlib
 * ReportLab
-* Threading
-* File Handling
+* SMTP Email Alerts
 
 ⸻
 
 Project Structure
 
-SOC-Log-Analyzer-Pro-SSH-Monitoring
-
-├── analyzer.py
-
-├── gui.py
-
+SOC_Log_Analyzer_Pro/
+│
 ├── logs/
-
+│   ├── sample.log
+│   └── ssh_test.log
+│
 ├── reports/
+│   ├── incident_report.csv
+│   ├── incident_report.html
+│   ├── incident_report.json
+│   └── incident_report.txt
+│
+├── screenshots/
+│   ├── dashboard.png
+│   ├── database.png
+│   ├── pie_chart.png
+│   └── bar_chart.png
+│
+├── analyzer.py
+├── gui.py
+├── soc_attacks.db
+├── requirements.txt
+└── README.md
 
-├── README.md
+⸻
 
-└── requirements.txt
+Risk Classification Logic
+
+Failed Attempts	       Risk Level
+1-2	                    Low
+3-5	                    Medium
+6+	                    High
+
+⸻
+
+Database Storage
+
+Detected attacks are stored in SQLite database:
+
+Table: attacks
+
+Columns:
+
+* id
+* ip
+* attempts
+* risk
+
+Example:
+
+IP Address	     Attempts	         Risk
+192.168.1.10	   7	             HIGH
+172.16.0.55        3	             MEDIUM
+203.0.113.50	   1	             LOW
+
+⸻
+
+Screenshots
+
+Dashboard
+
+Database Records
+
+Risk Distribution Chart
+
+Top Attackers
 
 ⸻
 
 How To Run
 
-1. Install Python
-2. Install Dependencies
+Install dependencies:
 
 pip install -r requirements.txt
 
-3. Run Application
+Run:
 
 python gui.py
 
 ⸻
 
-Future Enhancements
+Future Improvements
 
-* Email Alert System
-* GeoIP Tracking
-* Threat Intelligence Integration
 * SIEM Integration
-* Database Storage
-* Web Dashboard
+* GeoIP Mapping
+* Threat Intelligence Feed
+* Splunk Integration
+* ELK Stack Integration
+* Real-Time Dashboard Analytics
+
+
+Screenshots
+
+Main Dashboard
+
+⸻
+
+Database View
+
+⸻
+
+Risk Distribution Chart
+
+⸻
+
+Top Attackers Chart
+
+⸻
+
+PDF Report Generation
 
 ⸻
 
@@ -115,8 +154,4 @@ Author
 
 Ankit Shivhare
 
-BCA Graduate
-
-Cyber Security Enthusiast
-
-SOC Analyst Aspirant
+BCA Graduate | SOC Analyst Aspirant | Cyber Security Enthusiast

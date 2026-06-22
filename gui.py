@@ -4172,11 +4172,11 @@ def generate_csv():
 
 def send_email_alert(ip, attempts):
 
-    sender_email = "socalertproject@gmail.com"
+    sender_email = "myankit123@gmail.com"
 
-    app_password = "xensrhuscznuougl"
+    app_password = "sdsdfrtyhgfrtuij"
 
-    receiver_email = "receivealert9@gmail.com"
+    receiver_email = "awsdftyve43@gmail.com"
 
     msg = EmailMessage()
 
